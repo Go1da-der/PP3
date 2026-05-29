@@ -7,8 +7,8 @@ services:
       POSTGRES_DB: notification_system
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-    ports:
-      - "5432:5432"
+    expose:
+      - "5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/init:/docker-entrypoint-initdb.d
@@ -39,17 +39,18 @@ services:
     restart: "no"
 
   # PostgreSQL web UI
-  adminer:
-    image: adminer:4-standalone
-    container_name: notification-system-adminer
+  pgweb:
+    image: sosedoff/pgweb
+    container_name: notification-system-pgweb
     depends_on:
       postgres:
         condition: service_healthy
+      db-bootstrap:
+        condition: service_completed_successfully
     environment:
-      ADMINER_DEFAULT_SERVER: postgres
-      ADMINER_DESIGN: pepa-linha
+      DATABASE_URL: postgres://postgres:password@postgres:5432/notification_system?sslmode=disable
     ports:
-      - "8080:8080"
+      - "8080:8081"
     networks:
       - notification-network
     restart: unless-stopped
@@ -58,8 +59,8 @@ services:
   redis:
     image: redis:7-alpine
     container_name: notification-system-redis
-    ports:
-      - "6379:6379"
+    expose:
+      - "6379"
     volumes:
       - redis_data:/data
     networks:
