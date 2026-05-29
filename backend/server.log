@@ -1,0 +1,12 @@
+🚀 Server running on port 5000
+📚 API Documentation: http://localhost:5000/api-docs
+🔗 Health Check: http://localhost:5000/health
+::ffff:127.0.0.1 - - [15/May/2026:08:30:03 +0000] "GET /health HTTP/1.1" 200 74 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; ru-RU) WindowsPowerShell/5.1.19041.7291"
+::1 - - [15/May/2026:08:30:27 +0000] "POST /api/auth/login HTTP/1.1" 200 974 "http://127.0.0.1:4173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.506.31421 Chrome/146.0.7680.179 Electron/41.2.0 Safari/537.36"
+[32minfo[39m: User admin@example.com authenticated and connected {"service":"notification-system","timestamp":"2026-05-15 11:30:27"}
+::1 - - [15/May/2026:08:30:27 +0000] "GET /api/notifications/me HTTP/1.1" 200 1377 "http://127.0.0.1:4173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.506.31421 Chrome/146.0.7680.179 Electron/41.2.0 Safari/537.36"
+::1 - - [15/May/2026:08:30:27 +0000] "GET /api/teams HTTP/1.1" 200 894 "http://127.0.0.1:4173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.506.31421 Chrome/146.0.7680.179 Electron/41.2.0 Safari/537.36"
+::1 - - [15/May/2026:08:30:27 +0000] "GET /api/users HTTP/1.1" 200 2146 "http://127.0.0.1:4173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.506.31421 Chrome/146.0.7680.179 Electron/41.2.0 Safari/537.36"
+[32minfo[39m: Notification created: 4ed61fe2-441b-4044-af74-2ef2b0d64367 by admin@example.com {"service":"notification-system","timestamp":"2026-05-15 11:30:48"}
+::1 - - [15/May/2026:08:30:48 +0000] "POST /api/notifications HTTP/1.1" 201 674 "http://127.0.0.1:4173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.506.31421 Chrome/146.0.7680.179 Electron/41.2.0 Safari/537.36"
+::1 - - [15/May/2026:08:30:48 +0000] "GET /api/notifications/me HTTP/1.1" 200 2092 "http://127.0.0.1:4173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.506.31421 Chrome/146.0.7680.179 Electron/41.2.0 Safari/537.36"
